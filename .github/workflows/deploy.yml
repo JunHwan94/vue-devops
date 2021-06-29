@@ -26,7 +26,7 @@ jobs:
     - name: Set up Node.js
       uses: action/setup-node@master
       with:
-        nodeversion: 14.x
+        node-version: 14.x
 
     - name: Install dependencies
       run: yarn install
