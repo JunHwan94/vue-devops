@@ -15,7 +15,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   deploy:
     runs-on: ubuntu-latest
 
@@ -24,7 +23,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Set up Node.js
-      uses: action/setup-node@master
+      uses: actions/setup-node@master
       with:
         node-version: 14.x
 
@@ -32,9 +31,9 @@ jobs:
       run: yarn install
 
     - name: Build page
-     run: yarn build
-     env: 
-     NODE_ENV: production
+      run: yarn build
+      env: 
+        NODE_ENV: production
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
